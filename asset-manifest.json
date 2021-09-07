@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/milenahristovaangelkova/currency-converter/static/css/main.b3b7c66d.chunk.css",
+    "main.js": "/milenahristovaangelkova/currency-converter/static/js/main.afc90bfd.chunk.js",
+    "main.js.map": "/milenahristovaangelkova/currency-converter/static/js/main.afc90bfd.chunk.js.map",
+    "runtime-main.js": "/milenahristovaangelkova/currency-converter/static/js/runtime-main.df8a3ba5.js",
+    "runtime-main.js.map": "/milenahristovaangelkova/currency-converter/static/js/runtime-main.df8a3ba5.js.map",
+    "static/js/2.9153c38f.chunk.js": "/milenahristovaangelkova/currency-converter/static/js/2.9153c38f.chunk.js",
+    "static/js/2.9153c38f.chunk.js.map": "/milenahristovaangelkova/currency-converter/static/js/2.9153c38f.chunk.js.map",
+    "static/js/3.52c603d0.chunk.js": "/milenahristovaangelkova/currency-converter/static/js/3.52c603d0.chunk.js",
+    "static/js/3.52c603d0.chunk.js.map": "/milenahristovaangelkova/currency-converter/static/js/3.52c603d0.chunk.js.map",
+    "index.html": "/milenahristovaangelkova/currency-converter/index.html",
+    "static/css/main.b3b7c66d.chunk.css.map": "/milenahristovaangelkova/currency-converter/static/css/main.b3b7c66d.chunk.css.map",
+    "static/js/2.9153c38f.chunk.js.LICENSE.txt": "/milenahristovaangelkova/currency-converter/static/js/2.9153c38f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df8a3ba5.js",
+    "static/js/2.9153c38f.chunk.js",
+    "static/css/main.b3b7c66d.chunk.css",
+    "static/js/main.afc90bfd.chunk.js"
+  ]
+}
