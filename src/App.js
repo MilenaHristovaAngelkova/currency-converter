@@ -7,7 +7,7 @@ function App() {
   const [isPending, setIsPending] = useState(true);
   const [errorM, setErrorM] = useState("");
   const [selectedOption, setSelectedOption] = useState("usd");
-  let currencyRates= {};
+  const [currencyRates, setCurrencyRates] = useState({});
 
   useEffect(() => {
     fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/" + selectedOption + ".json")
@@ -20,19 +20,19 @@ function App() {
         return res.json();
       })
       .then(data => {
+        let temp = {};
         currs.forEach(curr => {
-          currencyRates[curr] = data[selectedOption][curr];
+          temp[curr] = data[selectedOption][curr];
         })
 
         setIsPending(false);
-
-        console.log(JSON.stringify(currencyRates));
+        setCurrencyRates(temp);
       })
       .catch(err => {
         setIsPending(false);
         setErrorM(err.message);
       })
-  });
+  }, [selectedOption]);
 
   const handleChange = (e) => {
     setSelectedOption(e.target.value);
@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <form>
-        <label htmlFor="currency">Currency options to choose from:</label>
+        <label htmlFor="currency">See currency rates for:</label>
         <select name="currency" id="currency" defaultValue="usd" onChange={handleChange}>
           {currs.map(curr => {
             return(
@@ -50,9 +50,9 @@ function App() {
           })}
         </select>
       </form>
-      {isPending && <section>Loading...</section>}
-      {errorM && <section>{ errorM }</section>}
-      <DisplayedData selectedOption={selectedOption} currencyRates={currencyRates} />
+      {isPending && <p>Loading...</p>}
+      {errorM && <p>{ errorM }</p>}
+      {!isPending && <DisplayedData selectedOption={selectedOption} currencyRates={currencyRates} />}
     </div>
   );
 }
