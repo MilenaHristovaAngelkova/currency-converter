@@ -1,4 +1,6 @@
-const DisplayedData = (props) => {
+import LongestArray from "./LongestArray";
+
+const ConversionsData = (props) => {
     let outputConversions = {};
     for (let [key, value] of Object.entries(props.currencyRates)) {
         if (key !== props.selectedOption) {
@@ -27,8 +29,12 @@ const DisplayedData = (props) => {
         <article className="conversions">
             <table>
                 <thead>
-                    <tr>
-                        <th>{`Exchange Rates < 1`}</th>
+                    <tr className="table-heading">
+                        <th colSpan="2">{`Exchange Rates < 1`}</th>
+                    </tr>
+                    <tr className="col-headings">
+                        <th>Currencies</th>
+                        <th>Rate</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,8 +59,12 @@ const DisplayedData = (props) => {
             </table>
             <table>
                 <thead>
-                    <tr>
-                        <th>Exchange Rates between 1 and 1.5</th>
+                    <tr className="table-heading">
+                        <th colSpan="2">Exchange Rates between 1 and 1.5</th>
+                    </tr>
+                    <tr className="col-headings">
+                        <th>Currencies</th>
+                        <th>Rate</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,8 +89,12 @@ const DisplayedData = (props) => {
             </table>
             <table>
                 <thead>
-                    <tr>
-                        <th>{`Exchange Rates > 1.5`}</th>
+                    <tr className="table-heading">
+                        <th colSpan="2">{`Exchange Rates > 1.5`}</th>
+                    </tr>
+                    <tr className="col-headings">
+                        <th>Currencies</th>
+                        <th>Rate</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,8 +117,9 @@ const DisplayedData = (props) => {
                     </tr>
                 </tfoot>
             </table>
+            <LongestArray outputConversions={outputConversions}/>        
         </article>
     );
 }
  
-export default DisplayedData;
+export default ConversionsData;

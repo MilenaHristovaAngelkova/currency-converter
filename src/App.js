@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import DisplayedData from './DisplayedData';
-import './App.css';
+import ConversionsData from './ConversionsData';
 
 function App() {
   const currs = ["usd", "eur", "aud", "cad", "chf", "nzd", "bgn"];
@@ -40,8 +39,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Exchange Rates Information</h1>    
       <form>
-        <label htmlFor="currency">See currency rates for:</label>
+        <label htmlFor="currency">See currency rates for: </label>
         <select name="currency" id="currency" defaultValue="usd" onChange={handleChange}>
           {currs.map(curr => {
             return(
@@ -52,7 +52,7 @@ function App() {
       </form>
       {isPending && <p>Loading...</p>}
       {errorM && <p>{ errorM }</p>}
-      {!isPending && <DisplayedData selectedOption={selectedOption} currencyRates={currencyRates} />}
+      {!isPending && <ConversionsData selectedOption={selectedOption} currencyRates={currencyRates} />}
     </div>
   );
 }
